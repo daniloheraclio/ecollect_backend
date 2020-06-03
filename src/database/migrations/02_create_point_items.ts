@@ -4,12 +4,12 @@ export async function up(knex: Knex) {
   // create table
   return knex.schema.createTable('point_items', table => {
     table.increments('id').primary();
-    table.integer('image')
+    table.integer('point_id')
     .notNullable()
     .references('id')
     .inTable('points');
 
-    table.integer('title')
+    table.integer('item_id')
     .notNullable()
     .references('id')
     .inTable('items');
